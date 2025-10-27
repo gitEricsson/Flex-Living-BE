@@ -1,7 +1,7 @@
-import express from "express";
-import dotenv from "dotenv";
-import cors from "cors"; // Import cors
-import reviewRoutes from "./routes/review.routes"; // Import review routes
+import express, { Request, Response } from 'express';
+import dotenv from 'dotenv';
+import cors from 'cors'; // Import cors
+import reviewRoutes from './routes/review.routes'; // Import review routes
 
 dotenv.config();
 
@@ -12,10 +12,10 @@ app.use(express.json());
 app.use(cors()); // Enable CORS for all routes
 
 // Mount review routes
-app.use("/api/reviews", reviewRoutes);
+app.use('/api/reviews', reviewRoutes);
 
-app.get("/", (req, res) => {
-  res.send("Flex Living Reviews Dashboard Backend is running!");
+app.get('/', (req: Request, res: Response) => {
+  res.send('Flex Living Reviews Dashboard Backend is running!');
 });
 
 app.listen(PORT, () => {
