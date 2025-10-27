@@ -13,9 +13,9 @@ const PORT = process.env.PORT || 3001; // Using 3001 to avoid conflict if fronte
 app.use(express_1.default.json());
 app.use((0, cors_1.default)()); // Enable CORS for all routes
 // Mount review routes
-app.use("/api/reviews", review_routes_1.default);
-app.get("/", (req, res) => {
-    res.send("Flex Living Reviews Dashboard Backend is running!");
+app.use('/api/reviews', review_routes_1.default);
+app.get('/', (req, res) => {
+    res.send('Flex Living Reviews Dashboard Backend is running!');
 });
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
